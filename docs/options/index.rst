@@ -11,113 +11,156 @@ Options
 
 .. highlight:: javascript
 
+The Galleria options cover most of the gallery customizations you will need for each implementation.
+Below you will find a summary of all options available. Click on an option title for more explanations and examples.
 
-Galleria options are defined using a flat object during initialization.::
+These options are the standard options that you can use for all themes. However, themes can add new options and set/modify default values on their own. Please check each theme documentation for full coverage. Custom options for each theme starts with an underscore.
 
-    $('#galleria').galleria({
-        preload: 3,
+
+Using options
+=============
+
+Galleria options are configured at anytime using the ``Galleria.configure`` function::
+
+    Galleria.configure({
         transition: 'fade',
-        image_crop: true
+        imageCrop: true
     });
 
-.. note:: You can define your own options and set defaults for each theme using
-          the Theme builder API.
+Or when calling ``Galleria.run``:
+
+    Galleria.run('#galleria', {
+        transition: 'fade',
+        imageCrop: true
+    });
 
 
 List of options
 ===============
+
 - :doc:`autoplay` Sets Galleria to play slidehow when initialized.
 
 - :doc:`carousel` Toggle the creation of a carousel.
 
-- :doc:`carousel_follow` Defines if the carousel should follow the image.
+- :doc:`carouselFollow` Defines if the carousel should follow the image.
 
-- :doc:`carousel_speed` Carousel animation speed in milliseconds.
+- :doc:`carouselSpeed` Carousel animation speed in milliseconds.
 
-- :doc:`carousel_steps` Defines how many "steps" the carousel should take on
+- :doc:`carouselSteps` Defines how many "steps" the carousel should take on
   each nav click.
 
 - :doc:`clicknext` Helper for adding a click event on the entire stage to move
   forward.
 
-- :doc:`data_config` Defines how Galleria should parse the HTML.
+- :doc:`dailymotion` Adds player options for the Daliymotion video player
 
-- :doc:`data_selector` Defines the selector Galleria should look for in the
+- :doc:`dataConfig` Defines how Galleria should parse the HTML. Useful for adding custom HTML captions.
+
+- :doc:`dataSelector` Defines the selector Galleria should look for in the
   source.
 
-- :doc:`data_source` Defines the Galleria data, or the HTML source where the
+- :doc:`dataSource` Defines the Galleria data, or the HTML source where the
   data is found.
 
-- :doc:`debug` Set this to true to get error messages.
+- :doc:`debug` Set this to false to prevent debug messages.
+
+- :doc:`dummy` Defines a dummy image that will be used if the image can’t be found.
 
 - :doc:`easing` Defines the easing mode globally.
 
 - :doc:`extend` Add custom functionality to the gallery.
 
+- :doc:`fullscreenCrop` Sets how Galleria should crop when in fullscreen mode.
+
+- :doc:`fullscreenDoubleTap` Enabled fullscreen toggle on double-tap for touch devices.
+
+- :doc:`fullscreenTransition` Defines a different transition for fullscreen mode.
+
 - :doc:`height` Manually set a gallery height.
 
-- :doc:`idle_time` Defines how long delay before Galleria goes into idle mode.
+- :doc:`idleMode` Option for turning on/off idle mode.
 
-- :doc:`image_crop` Defines how Galleria will crop the image.
+- :doc:`idleTime` Defines how long delay before Galleria goes into idle mode.
 
-- :doc:`image_margin` Sets a margin between the image and the stage.
+- :doc:`idleSpeed` Defines the animation speed in milliseconds when entering/exiting idle mode.
 
-- :doc:`image_pan` Toggles the image pan effect.
+- :doc:`imageCrop` Defines how Galleria will crop the image.
 
-- :doc:`image_pan_smoothness` Defines how smooth ( and CPU consuming ) the pan
+- :doc:`imageMargin` Sets a margin between the image and the stage.
+
+- :doc:`imagePan` Toggles the image pan effect.
+
+- :doc:`imagePanSmoothness` Defines how smooth ( and CPU consuming ) the pan
   effect should be.
 
-- :doc:`image_position` Positions the image.
+- :doc:`imagePosition` Positions the image.
 
-- :doc:`keep_source` Lets you keep the source elements.
+- :doc:`imageTimeout` Sets a timeout for fetching images.
 
-- :doc:`lightbox_fade_speed` Defines how fast the lightbox should fade.
+- :doc:`initialTransition` Sets a different transition on the the first image.
 
-- :doc:`lightbox_transition_speed` Defines how fast the lightbox should animate.
+- :doc:`keepSource` Lets you keep the source elements.
 
-- :doc:`max_scale_ratio` Defines how much Galleria is allowed to scale.
+- :doc:`layerFollow` Boolean for controlling if the layer will follow the image size or not.
 
-- :doc:`min_scale_ratio` Defines how much Galleria must scale.
+- :doc:`lightbox` Helper for attaching a `lightbox <http://en.wikipedia.org/wiki/Lightbox_(JavaScript)>`_ (to zoom in) when the user clicks on an image.
 
-- :doc:`on_image` Helper event method for adding custom functionality every
-  time an image is shown.
+- :doc:`lightboxFadeSpeed` Defines how fast the lightbox should fade.
 
-- :doc:`overlay_opacity` Sets how transparent the overlay should be.
+- :doc:`lightboxTransitionSpeed` Defines how fast the lightbox should animate.
 
-- :doc:`overlay_background` Defines the background color of the overlay.
+- :doc:`maxScaleRatio` Defines how much Galleria is allowed to scale.
 
-- :doc:`pause_on_interaction` Toggles if Galleria should stop playing if the
+- :doc:`minScaleRatio` Defines how much Galleria must scale.
+
+- :doc:`overlayBackground` Defines the background color of the overlay.
+
+- :doc:`overlayOpacity` Sets how transparent the overlay should be.
+
+- :doc:`pauseOnInteraction` Toggles if Galleria should stop playing if the
   user navigates.
 
-- :doc:`popup_links` Open Image links in new windows.
+- :doc:`popupLinks` Open Image links in new windows.
 
 - :doc:`preload` Defines how much Galleria should preload.
 
 - :doc:`queue` Defines if Galleria should queue the slideshow.
 
+- :doc:`responsive` Sets Galleria in responsive mode.
+
 - :doc:`show` Lets you start the slideshow at any image index.
 
-- :doc:`show_info` Toggles the caption.
+- :doc:`showCounter` Toggles the counter.
 
-- :doc:`show_counter` Toggles the counter.
+- :doc:`showInfo` Toggles the caption.
 
-- :doc:`show_imagenav` Toggles the image navigation arrows.
+- :doc:`showImagenav` Toggles the image navigation arrows.
 
-- :doc:`thumb_crop` Same as image_crop for thumbnails.
+- :doc:`swipe` Enables the swipe gesture for navigating on touch devices.
 
-- :doc:`thumb_fit` Lets you fit thumbnails according to width.
+- :doc:`thumbCrop` Same as image_crop for thumbnails.
 
-- :doc:`thumb_margin` Same as image_margin for thumbnails.
+- :doc:`thumbFit` Lets you fit thumbnails according to width.
 
-- :doc:`thumb_quality` Defines if and how IE should use bicubic image rendering
-  for thumbnails
+- :doc:`thumbMargin` Same as :doc:`imageMargin` for thumbnails.
 
 - :doc:`thumbnails` Sets how and if thumbnails should be created.
 
+- :doc:`thumbQuality` Defines if and how IE should use bicubic image rendering
+  for thumbnails
+
+- :doc:`touchTransition` Defines a different transition when a touch device is detected.
+
 - :doc:`transition` Defines what transition to use.
 
-- :doc:`transition_initial` Sets a different transition on the the first image.
+- :doc:`transitionSpeed` Defines the speed of the transition.
 
-- :doc:`transition_speed` Defines the speed of the transition.
+- :doc:`trueFullscreen` Makes Galleria enter a native fullscreen mode where supported.
+
+- :doc:`vimeo` Sets options for the Vimeo player
+
+- :doc:`wait` Defines if and how Galleria should wait until it can be displayed using user interaction.
 
 - :doc:`width` Manually set a gallery width.
+
+- :doc:`youtube` Sets options for the YouTube player

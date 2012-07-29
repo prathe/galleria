@@ -1,3 +1,5 @@
+.. highlight:: html
+
 ==========
 thumbnails
 ==========
@@ -12,11 +14,10 @@ If you set this to **'numbers'**, Galleria will create empty spans with numbers 
 
 Example on how to create numbered elements instead of thumbnails
 ................................................................
-
 ::
 
     <script>
-    $('#galleria').galleria({
+    Galleria.configure({
         thumbnails: "numbers"
     });
     </script>

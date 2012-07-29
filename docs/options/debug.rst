@@ -3,16 +3,16 @@ debug
 =====
 
     | type: **Boolean**
-    | default: *false*
+    | default: *true*
 
 This option is for turning debug on/off.
-By default, Galleria fails most errors silently, but in development mode you should turn debug on to throw errors when something is not right.
+By default, Galleria displays errors by printing them out in the gallery container and sometimes throw exceptions.
+For deployment you can turn debug off to generate a more generic error message if a fatal error is raised.
 
-If your gallery fails to load, turning debug to ``true`` is the first thing you should do.
-
+.. highlight:: javascript
 
 Example::
 
-    $('#galleria').galleria({
-        debug: true // debug is now on
-     });
+    Galleria.configure({
+        debug: false // debug is now off for deployment
+    });
